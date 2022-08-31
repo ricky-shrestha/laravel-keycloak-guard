@@ -129,7 +129,7 @@ class KeycloakGuard implements Guard
         $user = $this->provider->{$methodOnProvider}($this->decodedToken, $credentials);
       } else {
         $user = $this->provider->retrieveByCredentials($credentials);
-      }      
+      }
 
       if (!$user) {
         throw new UserNotFoundException("User not found. Credentials: " . json_encode($credentials));
